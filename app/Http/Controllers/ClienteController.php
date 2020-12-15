@@ -34,6 +34,7 @@ class ClienteController extends Controller
             'personas' => $personas
         ];
     }
+
     public function store(Request $request)
     {
         if (!$request->ajax()) return redirect('/');
@@ -48,7 +49,6 @@ class ClienteController extends Controller
         $persona->save();
     }
 
-
     public function update(Request $request)
     {
         if (!$request->ajax()) return redirect('/');
@@ -59,8 +59,6 @@ class ClienteController extends Controller
         $persona->direccion = $request->direccion;
         $persona->telefono = $request->telefono;
         $persona->email = $request->email;
-
         $persona->save();
     }
-
 }

@@ -88,7 +88,7 @@
                         <div class="modal-body">
                             <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
                                 <div class="form-group row">
-                                    <label class="col-md-3 form-control-label" for="text-input">Nombre</label>
+                                    <label class="col-md-3 form-control-label" for="text-input">Nombre (*)</label>
                                     <div class="col-md-9">
                                         <input type="text" v-model="nombre" class="form-control" placeholder="Nombre de la persona">                                        
                                     </div>
@@ -134,11 +134,12 @@
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label class="col-md-3 form-control-label" for="email-input">Telefono de contacto</label>
+                                    <label class="col-md-3 form-control-label" for="email-input">Teléfono de contacto</label>
                                     <div class="col-md-9">
-                                        <input type="text" v-model="telefono_contacto" class="form-control" placeholder="Telefono del contacto">
+                                        <input type="text" v-model="telefono_contacto" class="form-control" placeholder="Teléfono del contacto">
                                     </div>
                                 </div>
+
                                 <div v-show="errorPersona" class="form-group row div-error">
                                     <div class="text-center text-error">
                                         <div v-for="error in errorMostrarMsjPersona" :key="error" v-text="error">
@@ -258,8 +259,8 @@
                     'direccion' : this.direccion,
                     'telefono' : this.telefono,
                     'email' : this.email,
-                    'contacto' : this.contacto,
-                    'telefono_contacto' : this.telefono_contacto
+                    'contacto': this.contacto,
+                    'telefono_contacto': this.telefono_contacto
 
                 }).then(function (response) {
                     me.cerrarModal();
@@ -282,8 +283,8 @@
                     'direccion' : this.direccion,
                     'telefono' : this.telefono,
                     'email' : this.email,
-                    'contacto' : this.contacto,
-                    'telefono_contacto' : this.telefono_contacto,
+                    'contacto': this.contacto,
+                    'telefono_contacto': this.telefono_contacto,
                     'id': this.persona_id
                 }).then(function (response) {
                     me.cerrarModal();
@@ -311,8 +312,8 @@
                 this.direccion='';
                 this.telefono='';
                 this.email='';
-                this.contacto = '';
-                this.telefono_contacto = '';
+                this.contacto='';
+                this.telefono_contacto='';
                 this.errorPersona=0;
 
             },
@@ -331,7 +332,7 @@
                                 this.direccion='';
                                 this.telefono='';
                                 this.email='';
-                                this.contacto ='';
+                                this.contacto='';
                                 this.telefono_contacto='';
                                 this.tipoAccion = 1;
                                 break;
@@ -349,8 +350,8 @@
                                 this.direccion = data['direccion'];
                                 this.telefono = data['telefono'];
                                 this.email = data['email'];
-                                this.contacto=data['contacto'];
-                                this.telefono_contacto=data['telefono_contacto'];
+                                this.contacto = data['contacto'];
+                                this.telefono_contacto = data['telefono_contacto'];
                                 break;
                             }
                         }
